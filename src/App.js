@@ -1,25 +1,38 @@
 import React, { Component } from 'react'
-// import HelloWorld from './components/HelloWorld'
 import Todos from './components/Todos'
 
 class App extends Component {
-  
-
-   
-
- 
-
-
+  state = {
+    todos: 
+    [
+      {  
+        id: Math.random() + 1,
+        title: 'Take out the trash',
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Dinner',
+        completed: false
+      },
+      {
+        id: 3,
+        title: "Meeting with boss",
+        completed: true
+      }
+    ]
+  }
   render() {
     return 
     (
+      <>
       <div>
-        <Todos />
+        <Todos todos={this.state.todos} />
+
+      
       </div>
-    
+      </>
     )
   }
 }
-  
-
 export default App
