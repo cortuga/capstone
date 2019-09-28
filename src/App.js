@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import Todos from './components/Todos'
+import React, { Component } from "react"
+import Todos from "./components/Todos"
+import "bulma/css/bulma.css"
 
 class App extends Component {
   state = {
-    todos: 
-    [
-      {  
+    todos: [
+      {
         id: Math.random() + 1,
-        title: 'Take out the trash',
+        title: "Take out the trash",
         completed: false
       },
       {
         id: 2,
-        title: 'Dinner',
+        title: "Dinner",
         completed: false
       },
       {
@@ -23,16 +23,12 @@ class App extends Component {
     ]
   }
   render() {
-    return 
-    (
-      <>
+    return
+    ;<>
       <div>
         <Todos todos={this.state.todos} />
-
-      
       </div>
-      </>
-    )
+    </>
   }
 }
 export default App
