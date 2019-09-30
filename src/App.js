@@ -23,12 +23,13 @@ class App extends Component {
     ]
   }
   render() {
-    return
-    ;<>
-      <div>
-        <Todos todos={this.state.todos} />
-      </div>
-    </>
+    return (
+      <>
+        <div>
+          <Todos todos={this.state.todos} />
+        </div>
+      </>
+    )
   }
 }
 export default App
