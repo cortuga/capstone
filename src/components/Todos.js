@@ -1,20 +1,31 @@
-import React, { Component } from "react"
-import TodoItem from "./TodoItem"
-// import PropTypes from "prop-types"
+import react, { useState } from 'react'
 
-class Todos extends Component {
-  render() {
-    // console.log(this.props.todos)
-    // return this.props.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)
 
-    return this.props.todos.map((todo, i) => {
-      return <TodoItem key={i} todo={todo.title} />
-    })
-  }
+export default function Todos() {
+
+    const [newTodo, setNewTodo] = useState('')
+    // const [] = useState([])
+
+
+    function handleNewTodoChange(e) {
+        e.preventDefault()
+        setNewTodo(e.target)
+    }
+
+    return (
+        <>
+            <h1>Todos</h1>
+            <form>
+
+                <input placeholder="Your todo..." 
+                onChange={handleNewTodoChange}></input>
+                
+                <ul>
+                    <li>buy milk</li>
+                </ul>
+
+            </form>
+            
+        </>
+    )
 }
-
-// Todos.PropTypes = {
-//   todos: PropTypes.array.isRequired
-// }
-
-export default Todos
