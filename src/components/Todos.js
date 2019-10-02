@@ -18,7 +18,8 @@ export default function Todos() {
   }
 
   function removeTodo(id) {
-    setTodos(todos.filter(todo => todo.id != id))
+    setTodos(todos.filter(todo => todo.id !== id))
+    // console.log(todo.id, id)
   }
 
   return (
@@ -30,12 +31,14 @@ export default function Todos() {
           onChange={handleNewTodoChange}
         ></input>
 
-        <ul>
+        <ul className='todolist-ul'>
           {todos.map(todo => (
-            <li key={todo.id}>
+            <li key={todo.id} classList='todo-li'>
               {" "}
               {todo.text}
-              <button onclick={() => removeTodo(todo.id)}>x</button>
+              <a href='#' onclick={() => removeTodo(todo.id)}>
+                Delete
+              </a>
             </li>
           ))}
         </ul>
