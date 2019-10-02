@@ -9,4 +9,6 @@ import React from 'react';const Journal = () => {
         </form>
       </>
     );
-   }export default Journal;
+   }
+   
+   export default Journal;
